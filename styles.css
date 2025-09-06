@@ -1,0 +1,83 @@
+:root {
+  /* Colores generales */
+  --frame: #f2da7a;   
+  --tile:  #f4b6bb;   
+  --text:  #222;      
+  --radius: 24px;
+  --gap: 16px;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  color: var(--text);
+}
+
+/* Contenedor principal */
+.layout {
+  height: 100vh;
+  height: 100dvh;
+
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--gap);
+  background: var(--frame);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* Una caja genérica */
+.box {
+  background: var(--tile);
+  border-radius: calc(var(--radius) - 8px);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+/* Parte superior */
+.top {
+  flex: 1 1 auto;
+  display: flex;
+  gap: var(--gap);
+}
+
+/* Columna izquierda (D alto) */
+.left {
+  flex: 0 0 30%;
+}
+.left .box { height: 100%; }
+
+/* Zona derecha: A arriba, fila C-D-E abajo */
+.right {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+/* A (barra superior derecha) */
+.a {
+  flex: 0 1 50%;
+  min-height: 64px;
+}
+
+/* Fila C-D-E */
+.row {
+  flex: 1 1 50%;
+  display: flex;
+  gap: var(--gap);
+  min-height: 0;
+}
+.row .box { flex: 1 1 0; }
+
+/* F (barra inferior) */
+.f {
+  flex: 0 0 30%;
+  min-height: 80px;
+}
