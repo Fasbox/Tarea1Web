@@ -1,83 +1,73 @@
-:root {
-  /* Colores generales */
-  --frame: #f2da7a;   
-  --tile:  #f4b6bb;   
-  --text:  #222;      
-  --radius: 24px;
-  --gap: 16px;
-}
-
-* { box-sizing: border-box; }
-html, body {
-  height: 100%;
+/* Estilos generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  color: #333;
+  text-align: center;
   margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  color: var(--text);
-}
-
-/* Contenedor principal */
-.layout {
-  height: 100vh;
-  height: 100dvh;
-
-  max-width: 980px;
-  margin: 0 auto;
-  padding: var(--gap);
-  background: var(--frame);
-  border-radius: var(--radius);
+  padding: 2rem;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
+  align-items: center;
 }
 
-/* Una caja genérica */
-.box {
-  background: var(--tile);
-  border-radius: calc(var(--radius) - 8px);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
+/* Título */
+h1 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
-/* Parte superior */
-.top {
-  flex: 1 1 auto;
-  display: flex;
-  gap: var(--gap);
+/* Input + Botón */
+#pokemonInput {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #3b4cca;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 0.5rem;
 }
 
-/* Columna izquierda (D alto) */
-.left {
-  flex: 0 0 30%;
-}
-.left .box { height: 100%; }
-
-/* Zona derecha: A arriba, fila C-D-E abajo */
-.right {
-  flex: 1 1 auto;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
+#pokemonInput:focus {
+  border-color: #ffcb05;
 }
 
-/* A (barra superior derecha) */
-.a {
-  flex: 0 1 50%;
-  min-height: 64px;
+#searchBtn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #3b4cca;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* Fila C-D-E */
-.row {
-  flex: 1 1 50%;
-  display: flex;
-  gap: var(--gap);
-  min-height: 0;
+#searchBtn:hover {
+  background: #2a2f9e;
 }
-.row .box { flex: 1 1 0; }
 
-/* F (barra inferior) */
-.f {
-  flex: 0 0 30%;
-  min-height: 80px;
+/* Contenedor del resultado */
+#result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  width: 300px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* Imagen del Pokémon */
+#result img {
+  width: 150px;
+  height: auto;
+  margin: 1rem 0;
+}
+
+/* Mensajes de error */
+.error {
+  color: #e63946;
+  font-weight: bold;
 }
